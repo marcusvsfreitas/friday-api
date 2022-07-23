@@ -3,7 +3,7 @@ import passport from 'passport';
 import { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { ExtractJwt, Strategy as JWTStrategy } from 'passport-jwt';
-import { User } from '../models/User';
+import { User, UserInstance } from '../models/User';
 dotenv.config();
 
 const notAuthorizedJson = { status: 401, message: 'Não autorizado' };

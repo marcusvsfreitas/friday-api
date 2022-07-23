@@ -5,6 +5,7 @@ export interface UserInstance extends Model {
   id: number,
   name: string,
   email: string,
+  password: string,
 };
 
 export const User = sequelize.define<UserInstance>('User', {
@@ -24,6 +25,10 @@ export const User = sequelize.define<UserInstance>('User', {
     type: DataTypes.STRING
   },
 }, {
-  tableName: "user",
-  timestamps: false
+  tableName: "users",
+  timestamps: true,
+  paranoid: true,
+  createdAt: "created_at",
+  updatedAt: "updated_at",
+  deletedAt: "deleted_at",
 })
